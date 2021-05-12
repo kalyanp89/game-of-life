@@ -15,7 +15,7 @@ pipeline {
         stage('Branch'){
             when {
                 expression {
-                    return ${GITS} == "master"
+                    return "${GITS}" == "master"
                 }
 
                
