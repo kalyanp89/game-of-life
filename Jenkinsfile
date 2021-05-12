@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    FULL_PATH_BRANCH = "${sh(script:'git name-rev --name-only HEAD', returnStdout: true)}"
 
     stages {
         stage('Git') {
@@ -9,14 +10,9 @@ pipeline {
             }
         }    
         stage('Branch'){
-            when {
-                expression {
-                   env.GIT_BRANCH == "master"
-                }
-            }
         
             steps {
-                sh "echo Branch: ${env.BRANCH_NAME}"
+                sh "echo Branch: ${FULL_PATH_BRANCH}"
             }    
         
         }
