@@ -13,9 +13,14 @@ pipeline {
             }
         }    
         stage('Branch'){
+            when {
+                ${GITS}  == "master"
+               
+            }
         
             steps {
                 sh "echo ${GITS}"
+                sh "echo testing"
             }    
         
         }
