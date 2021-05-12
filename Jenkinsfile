@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        FULL_PATH_BRANCH = "${sh(script:'git name-rev --name-only HEAD |awk -F "/" '{print $2}' ', returnStdout: true)}"
+        FULL_PATH_BRANCH = "${sh(script:'git name-rev --name-only HEAD', returnStdout: true)}"
         GITS = "${GIT_BRANCH}"
     }
 
