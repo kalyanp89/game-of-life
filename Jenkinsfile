@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         FULL_PATH_BRANCH = "${sh(script:'git name-rev --name-only HEAD', returnStdout: true)}"
-        GITS = "${GIT_BRANCH}"
+        GITS = "${GIT_BRANCH.split("/")[1]}"
     }
 
     stages {
