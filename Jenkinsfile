@@ -24,8 +24,8 @@ pipeline {
             steps {
                 sh """
                   mvn clean package 
-                  echo ${GITS}
-                  echo testing
+                  echo "${GITS}"
+                  echo "esting"
             }    """
         
         }
