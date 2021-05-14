@@ -16,7 +16,7 @@ pipeline {
         stage('Build'){
             when {
                 expression {
-                    return "${GITS}" == "master"
+                    return "${GITS}" == "dev"
                 }
 
                
