@@ -23,12 +23,15 @@ pipeline {
            
             steps {
                 sh """
+                
                   mvn clean package 
                   echo ${GITS}
                   echo teesting
-            }    """
-        
+                
+                """
+            }
         }
     }
 }
+		
 
