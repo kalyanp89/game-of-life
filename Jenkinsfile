@@ -27,6 +27,7 @@ pipeline {
                   mvn clean package 
                   echo ${GITS}
                   echo teesting
+                  echo I am from dev
                 
                 """
             }
