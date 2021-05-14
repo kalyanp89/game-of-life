@@ -38,7 +38,7 @@
                junit 'gameoflife-core/target/surefire-reports/*.xml'
              }
             alwayas {
-              mail to: kalyanpadagan@gmail.com, subject: 'Testing :('
+              mail bcc: '', body: 'Thsi is the testing', cc: '', from: '', replyTo: '', subject: 'Hello', to: 'kalyanpadagan@gmail.com'
             }
            }
        }
