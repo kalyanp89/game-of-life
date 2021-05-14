@@ -37,7 +37,7 @@
              always {
                junit 'gameoflife-core/target/surefire-reports/*.xml'
              }
-            alwayas {
+            success {
               mail bcc: '', body: 'Thsi is the testing', cc: '', from: '', replyTo: '', subject: 'Hello', to: 'kalyanpadagan@gmail.com'
             }
            }
