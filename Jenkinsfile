@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    
     environment {
         FULL_PATH_BRANCH = "${sh(script:'git name-rev --name-only HEAD', returnStdout: true)}"
         GITS = "${GIT_BRANCH.split("/")[1]}"
@@ -16,21 +15,21 @@ pipeline {
         stage('Build'){
             when {
                 expression {
-                    return "${GITS}" == "master"
+                    return "${GITS}" == "dev"
                 }
 
                
             }
-        
+           
             steps {
                 sh """
-                 mvn clean package 
-                 echo ${GITS}
-                 echo testing
+                
+                  mvn clean package 
+                  echo ${GITS}
+                  echo teesting
+                
                 """
-            }    
-        
+            }
         }
     }
 }
-
