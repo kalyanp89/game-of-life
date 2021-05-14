@@ -12,7 +12,7 @@ pipeline {
             
             }
         }    
-        stage('Branch'){
+        stage('Build'){
             when {
                 expression {
                     return "${GITS}" == "master"
@@ -20,11 +20,13 @@ pipeline {
 
                
             }
-        
+           
             steps {
-                sh "echo ${GITS}"
-                sh "echo testing"
-            }    
+                sh """
+                  mvn clean package 
+                  echo ${GITS}
+                  echo testing
+            }    """
         
         }
     }
