@@ -1,4 +1,4 @@
-pipeline {
+ pipeline {
     agent any
     environment {
         FULL_PATH_BRANCH = "${sh(script:'git name-rev --name-only HEAD', returnStdout: true)}"
@@ -32,8 +32,12 @@ pipeline {
                 
                 """
             }
-           
-          
+            
+           post {
+             always {
+               junit 'gameoflife-core/target/surefire-reports/*.xml'
+             }
+           }
        }
         
     }
