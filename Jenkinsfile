@@ -28,6 +28,7 @@ pipeline {
                   echo ${GITS}
                   echo teesting
                   echo I am from dev
+                  pwd
                 
                 """
             }
