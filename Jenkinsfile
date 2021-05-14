@@ -37,6 +37,9 @@
              always {
                junit 'gameoflife-core/target/surefire-reports/*.xml'
              }
+            alwayas {
+              mail to: kalyanpadagan@gmail.com, subject: 'Testing :('
+            }
            }
        }
         
